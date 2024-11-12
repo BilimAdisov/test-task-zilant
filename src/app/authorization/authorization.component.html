@@ -1,0 +1,18 @@
+<div class="auth">
+  <form class="form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <h1>Авторизация</h1>
+    <input
+      class="inp"
+      type="email"
+      placeholder="Логин"
+      formControlName="username"
+    />
+    <input
+      class="inp"
+      type="password"
+      placeholder="Пароль"
+      formControlName="password"
+    />
+    <button class="btn" type="submit">Авторизоваться</button>
+  </form>
+</div>

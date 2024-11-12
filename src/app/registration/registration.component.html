@@ -1,0 +1,31 @@
+<div class="registr">
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <h1>Регистрация</h1>
+    <input
+      class="inp"
+      type="email"
+      placeholder="Логин"
+      formControlName="username"
+    />
+    <input class="inp" type="name" placeholder="Имя" formControlName="name" />
+    <input
+      class="inp"
+      type="surname"
+      placeholder="Фамилия"
+      formControlName="surname"
+    />
+    <input
+      class="inp"
+      type="patronymic"
+      placeholder="Отчество"
+      formControlName="patronymic"
+    />
+    <input
+      class="inp"
+      type="password"
+      placeholder="Пароль"
+      formControlName="password"
+    />
+    <button class="btn" type="submit">Зарегистрироваться</button>
+  </form>
+</div>
