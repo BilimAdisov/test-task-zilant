@@ -7,8 +7,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { IUserdata } from '../authorization/authorization.component';
-import { ApiService } from '../../custom-services/api.service';
-import { CustomCookieService } from '../../custom-services/cookie.service';
+import { ApiService } from '../../../custom-services/api.service';
+import { CustomCookieService } from '../../../custom-services/cookie.service';
 
 @Component({
   selector: 'app-registration',

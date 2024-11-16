@@ -4,9 +4,6 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AuthGuard } from '../custom-guard/auth.guard';
-import { ApiService } from '../custom-services/api.service';
-import { CustomCookieService } from '../custom-services/cookie.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-root',
@@ -19,10 +16,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AuthGuard, ApiService, CustomCookieService],
+  providers: [AuthGuard],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'Test task';
+
+  state: null | {
+    name: string;
+    position: string;
+    age: number;
+    id: number;
+  } = null;
+
+  employees = [
+    { name: 'Nicky', position: 'Frontend Developer', age: 25, id: 1 },
+    { name: 'Franko', position: 'Backend Developer', age: 32, id: 2 },
+    { name: 'Samantha', position: 'UI/UX Designer', age: 21, id: 3 },
+  ];
+
+  constructor() {}
 }

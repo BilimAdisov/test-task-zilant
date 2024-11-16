@@ -1,1 +1,11 @@
-<p style="color: white">dashboard works!</p>
+<div>
+  <h1 style="color: white">dashboard works!</h1>
+  <h2 style="color: white">Items:</h2>
+  <ul>
+    <li style="color: white" *ngFor="let item of dataUsers">
+      {{ item?.value }}
+      -
+      {{ item?.label }}
+    </li>
+  </ul>
+</div>

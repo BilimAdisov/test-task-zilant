@@ -6,9 +6,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CustomCookieService } from '../../custom-services/cookie.service';
 import { Router } from '@angular/router';
-import { ApiService } from '../../custom-services/api.service';
+import { ApiService } from '../../../custom-services/api.service';
+import { CustomCookieService } from '../../../custom-services/cookie.service';
 
 export interface IUserdata {
   id: number;
