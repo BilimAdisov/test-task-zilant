@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../custom-services/api.service';
 import { CommonModule } from '@angular/common';
+import { ApiService } from '../../core/service/api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 interface IData {
   label: string;
@@ -11,7 +12,7 @@ interface IData {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })

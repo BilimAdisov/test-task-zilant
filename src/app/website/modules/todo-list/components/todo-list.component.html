@@ -1,0 +1,50 @@
+<div class="todo-wrapper">
+  <div class="controller">
+    <input
+      type="text"
+      class="inp-add"
+      placeholder="write task"
+      [(ngModel)]="newTaskTitle"
+      (keyup.enter)="addTask()"
+    />
+    <button class="btn-add" (click)="addTask()">Add</button>
+  </div>
+  <div class="flex-container">
+    <ul class="active">
+      <li style="color: greenyellow; font-size: 24px">Активные</li>
+      <li
+        *ngFor="let item of getTodoList.active"
+        style="color: white; display: flex; flex-direction: row; gap: 20px"
+      >
+        <span>{{ item?.title }}</span>
+        <button (click)="updateTask(item.id, !item.status, item.title)">
+          {{ item?.status ? "Не выполнен" : "Выполнен" }}
+        </button>
+        <button (click)="deleteTask(item.id)" style="border: 1px solid white">
+          Удалить
+        </button>
+      </li>
+    </ul>
+    <ul class="unactive">
+      <li style="color: red; font-size: 24px">Не активные</li>
+      <li
+        *ngFor="let item of getTodoList.unactive"
+        style="
+          color: white;
+          text-decoration: line-through;
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+        "
+      >
+        <span>{{ item?.title }}</span>
+        <button (click)="updateTask(item.id, !item.status, item.title)">
+          {{ item?.status ? "Не выполнен" : "Выполнен" }}
+        </button>
+        <button (click)="deleteTask(item.id)" style="border: 1px solid white">
+          Удалить
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

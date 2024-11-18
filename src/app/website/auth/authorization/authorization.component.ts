@@ -7,8 +7,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from '../../../custom-services/api.service';
-import { CustomCookieService } from '../../../custom-services/cookie.service';
+import { ApiService } from '../../core/service/api.service';
+import { CustomCookieService } from '../../core/service/cookie.service';
+import { HttpClientModule } from '@angular/common/http';
 
 export interface IUserdata {
   id: number;
@@ -21,7 +22,7 @@ export interface IUserdata {
 @Component({
   selector: 'app-authorization',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './authorization.component.html',
   styleUrl: './authorization.component.scss',
 })

@@ -31,23 +31,6 @@
       </li>
     </ul>
   </nav>
-  <div class="list-position">
-    <h1>{{ title }}</h1>
-    <h2>Список сотрудников:</h2>
-    <h1>id: {{ state?.id ?? "none" }}</h1>
-    <h1>name: {{ state?.name ?? "none" }}</h1>
-    <h1>position: {{ state?.position ?? "none" }}</h1>
-    <h1>age: {{ state?.age ?? "none" }}</h1>
-    <ul>
-      <li
-        *ngFor="let employee of employees"
-        class="item"
-        (click)="state = employee"
-      >
-        <strong>{{ employee.name }}</strong> - {{ employee.position }}
-      </li>
-    </ul>
-  </div>
 </main>
 
 <router-outlet />

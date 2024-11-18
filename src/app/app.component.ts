@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { AuthGuard } from '../custom-guard/auth.guard';
+import { AuthGuard } from './website/core/guards/auth.guard';
 
 @Component({
   selector: 'app-root',

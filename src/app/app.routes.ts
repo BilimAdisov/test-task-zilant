@@ -1,9 +1,8 @@
 import { Routes } from '@angular/router';
-import { RegistrationComponent } from '../website/auth/registration/registration.component';
-import { AuthGuard } from '../custom-guard/auth.guard';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AppComponent } from './app.component';
-import { AuthorizationComponent } from '../website/auth/authorization/authorization.component';
+import { AuthGuard } from './website/core/guards/auth.guard';
+import { TodoListComponent } from './website/modules/todo-list/components/todo-list.component';
+import { AuthorizationComponent } from './website/auth/authorization/authorization.component';
+import { RegistrationComponent } from './website/auth/registration/registration.component';
 
 export const routes: Routes = [
   {
@@ -15,12 +14,20 @@ export const routes: Routes = [
     component: RegistrationComponent,
   },
   {
+    path: 'todo',
+    component: TodoListComponent,
+    // loadComponent: () =>
+    //   import('./website/modules/todo-list/components/todo-list.component').then(
+    //     (p) => p.TodoListComponent
+    //   ),
+  },
+  {
     path: 'dashboard',
     // component: DashboardComponent,
     loadComponent: () =>
-      import('./dashboard/dashboard.component').then(
+      import('./website/modules/dashboard/dashboard.component').then(
         (p) => p.DashboardComponent
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
 ];
