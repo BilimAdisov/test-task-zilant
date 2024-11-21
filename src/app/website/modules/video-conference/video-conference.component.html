@@ -1,0 +1,10 @@
+<div class="stream-wrapper">
+  <video #localVideo autoplay muted></video>
+  <video #remoteVideo autoplay></video>
+  <button (click)="toggleMicrophone()">
+    {{ isMicrophoneOn ? "Microphone On" : "Microphone Off" }}
+  </button>
+  <button (click)="toggleVideo()">
+    {{ isVideoOn ? "Video On" : "Video Off" }}
+  </button>
+</div>
